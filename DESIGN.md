@@ -10,8 +10,9 @@ Modern endüstriyel kurumsal dil. Keskin köşeler, hairline çizgiler, teknik m
 | `--steel` | `#161F2A` | Topbar, footer, hover zemin |
 | `--steel-2` | `#1D2937` | Kurumsal bölüm zemini |
 | `--paper` | `#F4F3EF` | Açık bölüm zemini (sektörler) |
-| `--accent` | `#FFB81C` | Sinyal sarısı — CTA, vurgu, kicker (kaynak kıvılcımı teması) |
-| `--accent-ink` | `#131007` | Sarı zemin üzeri metin |
+| `--accent` | `#4360A9` | Logo ana rengi (kraliyet mavisi) — CTA, bantlar, buton zeminleri |
+| `--accent-ink` | `#FFFFFF` | Mavi zemin üzeri metin |
+| `--accent-text` | `#8FA3D9` koyu / `#34497C` açık tema | Metin/ikon vurguları — kicker, linkler, sayılar. Hero ve sürdürülebilirlik bandında her zaman `#8FA3D9` |
 | `--blue` / `--blue-deep` | `#2E7CC3` / `#10395C` | Marka mavisinin modern tonu — sürdürülebilirlik gradyanı |
 | `--text-on-dark` | `#E8EBEE` | Koyu zemin üzeri metin |
 | `--muted-on-dark` | `#94A1AE` | Koyu zemin üzeri ikincil metin |
