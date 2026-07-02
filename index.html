@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sağlam Makina — Endüstriyel Kaynak Teknolojileri | 1985'ten Beri</title>
+<meta name="description" content="Sağlam Makina: 40 yıllık deneyimle punta kaynak, dikiş kaynak ve form makineleri üretimi. 3 kıtada 31 ülkeye makine ihracatı. Bursa, Türkiye.">
+
+<script>
+/* Tema: ilk boyamadan önce uygula (FOUC önleme) */
+(function(){
+  var t = localStorage.getItem('sm-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <span class="topbar-item hours"><i data-lucide="clock"></i> <span data-i18n="top_hours">Çağrı Merkezi — Hafta içi 08:00–18:30</span></span>
+      <a class="topbar-item" href="tel:+902244824482"><i data-lucide="phone"></i> +90 224 482 44 82</a>
+    </div>
+    <div class="topbar-left">
+      <a class="topbar-item mail" href="mailto:bilgi@saglammakina.com"><i data-lucide="mail"></i> bilgi@saglammakina.com</a>
+      <div class="lang-switch" role="group" aria-label="Dil seçimi">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Sağlam Makina ana sayfa">
+      <img class="brand-logo" src="assets/logo.png" alt="Sağlamlar — Sağlam Makina">
+      <span class="brand-sub">Est. 1985 · Bursa</span>
+    </a>
+    <nav class="main-nav" aria-label="Ana menü">
+      <a href="#urunler" data-i18n="nav_products">Ürünler</a>
+      <a href="#sektorler" data-i18n="nav_sectors">Sektörler</a>
+      <a href="#kurumsal" data-i18n="nav_corporate">Kurumsal</a>
+      <a href="#surdurulebilirlik" data-i18n="nav_sustain">Sürdürülebilirlik</a>
+      <a href="#haberler" data-i18n="nav_news">Haberler</a>
+      <a href="hesap.html" data-i18n="nav_calc">Hesaplayıcı</a>
+      <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
+    </nav>
+    <div class="header-tools">
+      <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+      <a class="header-cta" href="#iletisim"><span data-i18n="nav_quote">Teklif Talebi</span> <i data-lucide="arrow-right"></i></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileNav">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobil menü">
+    <a href="#urunler" data-i18n="nav_products">Ürünler</a>
+    <a href="#sektorler" data-i18n="nav_sectors">Sektörler</a>
+    <a href="#kurumsal" data-i18n="nav_corporate">Kurumsal</a>
+    <a href="#surdurulebilirlik" data-i18n="nav_sustain">Sürdürülebilirlik</a>
+    <a href="#haberler" data-i18n="nav_news">Haberler</a>
+    <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
+    <a href="hesap.html" data-i18n="nav_calc_long">Tel Panel Hesabı</a>
+    <a href="#iletisim" class="cta" data-i18n="cta_btn1">Teklif Talebi Oluştur</a>
+  </nav>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="hero">
+  <video class="hero-video" src="assets/saglammakina.mp4" autoplay muted loop playsinline poster="assets/faaliyet.jpg" aria-hidden="true"></video>
+  <div class="wrap">
+    <div>
+      <p class="kicker" data-i18n="hero_kicker">Endüstriyel Kaynak Teknolojileri</p>
+      <h1 data-pretext data-i18n-html="hero_title">3 kıtada, <span class="hl">31 ülkeye</span> makine ihracatı.</h1>
+      <p class="hero-lede" data-pretext data-i18n="hero_lede">40 yıllık sanayi ve hizmet deneyimi, lider iş ortaklarıyla küresel büyüme. Punta kaynak, dikiş kaynak ve form makinelerinde endüstriyel üretimin çözüm ortağıyız.</p>
+      <div class="hero-tags">
+        <span class="hero-tag" data-i18n="tag1">#PuntaKaynak</span>
+        <span class="hero-tag" data-i18n="tag2">#DikişKaynak</span>
+        <span class="hero-tag" data-i18n="tag3">#PanelÇitKaynak</span>
+        <span class="hero-tag" data-i18n="tag4">#FormMakineleri</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#urunler"><span data-i18n="hero_btn_products">Ürünleri Keşfet</span> <i data-lucide="arrow-right"></i></a>
+        <a class="btn btn-ghost" href="#iletisim"><span data-i18n="hero_btn_support">Teknik Destek</span> <i data-lucide="headset"></i></a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Şirket göstergeleri">
+      <div class="hero-card-head"><span>Sağlam Makina</span><span>1985 →</span></div>
+      <div class="hero-stat"><span class="num"><em>40</em>+</span><span class="lbl" data-i18n="stat1">yıllık sanayi ve hizmet deneyimi</span></div>
+      <div class="hero-stat"><span class="num">31</span><span class="lbl" data-i18n="stat2">ülkeye aktif makine ihracatı</span></div>
+      <div class="hero-stat"><span class="num">3</span><span class="lbl" data-i18n="stat3">kıtada endüstriyel iş ortaklığı</span></div>
+      <div class="hero-stat"><span class="num">6</span><span class="lbl" data-i18n="stat4">ana ürün grubunda üretim</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- Stat bar -->
+<div class="statbar" role="presentation">
+  <div class="wrap">
+    <div class="statbar-item" data-i18n="bar1">EST. 1985 — BURSA</div>
+    <div class="statbar-item" data-i18n="bar2">40+ YIL DENEYİM</div>
+    <div class="statbar-item" data-i18n="bar3">3 KITA · 31 ÜLKE</div>
+    <div class="statbar-item" data-i18n="bar4">%100 YERLİ ÜRETİM</div>
+  </div>
+</div>
+
+<!-- Products -->
+<section class="section" id="urunler">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-i18n="prod_kicker">Ürün Grupları</p>
+        <h2 data-i18n-html="prod_title">Üretim hattınıza güç katan<br>makine aileleri</h2>
+      </div>
+      <a class="section-link" href="#iletisim"><span data-i18n="prod_link">Tüm Ürünler</span> <i data-lucide="arrow-up-right"></i></a>
+    </div>
+    <div class="product-grid">
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">01</span><span class="product-icon"><i data-lucide="zap"></i></span></div>
+        <h3 data-i18n="p1_t">Punta Kaynak Makineleri</h3>
+        <p data-i18n="p1_d">Ayak pedallı, üstten kollu, projeksiyon, alın, askılı, masa tipi ve çok noktalı seriler.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">02</span><span class="product-icon"><i data-lucide="grid-3x3"></i></span></div>
+        <h3 data-i18n="p2_t">Tel Punta Kaynak Makineleri</h3>
+        <p data-i18n="p2_d">CNC tel punta, çelik hasır ve panel çit kaynak makineleri.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">03</span><span class="product-icon"><i data-lucide="move-horizontal"></i></span></div>
+        <h3 data-i18n="p3_t">Dikiş Kaynak Makineleri</h3>
+        <p data-i18n="p3_d">Boy dikiş, kenar dikiş, universal ve işe özel dikiş kaynak çözümleri.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">04</span><span class="product-icon"><i data-lucide="cog"></i></span></div>
+        <h3 data-i18n="p4_t">Form Makineleri</h3>
+        <p data-i18n="p4_d">Tel kesme, tel bükme ve tel doğrultma makineleri.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">05</span><span class="product-icon"><i data-lucide="snowflake"></i></span></div>
+        <h3 data-i18n="p5_t">Soğutma Sistemleri</h3>
+        <p data-i18n="p5_d">Kaynak hatlarında kesintisiz verim için endüstriyel soğutma üniteleri.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      <a class="product-card" href="#iletisim">
+        <div class="product-top"><span class="product-no">06</span><span class="product-icon"><i data-lucide="wrench"></i></span></div>
+        <h3 data-i18n="p6_t">Yedek Parça &amp; Ekipmanlar</h3>
+        <p data-i18n="p6_d">Orijinal yedek parça ve ekipmanlarla uzun ömürlü makine performansı.</p>
+        <span class="product-arrow"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sectors -->
+<section class="section" id="sektorler">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-i18n="sec_kicker">Sektörel Projeler</p>
+        <h2 data-i18n-html="sec_title">Sektöründe öncü<br>faaliyet gruplarımız</h2>
+      </div>
+      <a class="section-link" href="#iletisim"><span data-i18n="sec_link">Projeleri İncele</span> <i data-lucide="arrow-up-right"></i></a>
+    </div>
+    <div class="sector-list">
+      <a class="sector-row" href="#iletisim">
+        <span class="sector-no">S/01</span>
+        <img class="sector-thumb" src="assets/sector-beyaz-esya.png" alt="Punta kaynak uygulaması — beyaz eşya" loading="lazy">
+        <h3 data-i18n="s1_t">Beyaz Eşya ve Ev Aletleri</h3>
+        <p data-i18n="s1_d">Buzdolabı rafından fırın gövdesine, seri üretim hatları için hassas punta çözümleri.</p>
+        <span class="go"><i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="sector-row" href="#iletisim">
+        <span class="sector-no">S/02</span>
+        <img class="sector-thumb" src="assets/sector-enerji.png" alt="Enerji ve iklimlendirme uygulaması" loading="lazy">
+        <h3 data-i18n="s2_t">Enerji ve İklimlendirme</h3>
+        <p data-i18n="s2_d">Radyatör, kombi ve iklimlendirme ekipmanlarında dikiş ve punta kaynak hatları.</p>
+        <span class="go"><i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="sector-row" href="#iletisim">
+        <span class="sector-no">S/03</span>
+        <img class="sector-thumb" src="assets/sector-insaat.png" alt="Çelik hasır ve panel çit üretimi" loading="lazy">
+        <h3 data-i18n="s3_t">İnşaat ve Yapı</h3>
+        <p data-i18n="s3_d">Çelik hasır ve panel çit üretiminde yüksek kapasiteli çok noktalı kaynak sistemleri.</p>
+        <span class="go"><i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="sector-row" href="#iletisim">
+        <span class="sector-no">S/04</span>
+        <img class="sector-thumb" src="assets/sector-otomotiv.png" alt="Otomotiv komponent üretimi" loading="lazy">
+        <h3 data-i18n="s4_t">Otomotiv Sanayi</h3>
+        <p data-i18n="s4_d">Gövde ve şasi komponentlerinde otomasyona hazır projeksiyon kaynak makineleri.</p>
+        <span class="go"><i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="sector-row" href="#iletisim">
+        <span class="sector-no">S/05</span>
+        <img class="sector-thumb" src="assets/uretim.jpg" alt="Endüstriyel üretim tesisi" loading="lazy">
+        <h3 data-i18n="s5_t">Üretim ve İmalat</h3>
+        <p data-i18n="s5_d">Genel imalat sanayine işe özel tasarlanan kaynak ve form makineleri.</p>
+        <span class="go"><i data-lucide="arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="kurumsal">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="kicker" data-i18n="about_kicker">Kurumsal</p>
+        <h2 data-i18n-html="about_title">Türkiye'den dünyaya,<br>1985'ten beri.</h2>
+        <figure class="about-visual">
+          <img src="assets/hero.webp" alt="Tel raf punta kaynak uygulaması" loading="lazy">
+          <figcaption data-i18n="about_cap">Punta kaynak uygulaması — tel raf üretimi</figcaption>
+        </figure>
+      </div>
+      <div class="about-copy">
+        <p data-pretext data-i18n="about_p1">Sağlam Makina'nın temel stratejisi; Türkiye ekonomisine katma değer yaratmaya devam ederken, yenilikçi ürün ve hizmetler geliştirmeye odaklı, ufku dünya pazarlarına açık bir vizyon üzerine kurulu.</p>
+        <p data-pretext data-i18n="about_p2">2025 yılında 40. kuruluş yıl dönümünü kutlayan Sağlam Makina; başta Türkiye olmak üzere dünyanın farklı pazarlarında beyaz eşya, inşaat, otomotiv ve diğer sektörlere hitap ederek istikrarlı büyümesini sürdürüyor.</p>
+        <p data-pretext data-i18n="about_p3">Yüksek kalite ve dayanıklılıkta ürettiğimiz makineler; kullanıcı dostu arayüzleri ve yüksek performanslarıyla endüstriyel üretim süreçlerinde verimliliği ve hassasiyeti artırıyor.</p>
+        <div class="about-facts">
+          <div class="about-fact"><div class="v">1985</div><div class="k" data-i18n="fact1">Bursa'da kuruluş</div></div>
+          <div class="about-fact"><div class="v">40.</div><div class="k" data-i18n="fact2">kuruluş yıl dönümü — 2025</div></div>
+          <div class="about-fact"><div class="v">31</div><div class="k" data-i18n="fact3">ülkeye ihracat</div></div>
+          <div class="about-fact"><div class="v">5</div><div class="k" data-i18n="fact4">ana sektöre çözüm</div></div>
+        </div>
+        <div class="hero-actions" style="margin-top: 28px;">
+          <a class="btn btn-ghost" style="background: none; color: var(--text); border-color: var(--line);" href="#iletisim"><span data-i18n="about_btn">Hikayeni Paylaş</span> <i data-lucide="message-square-quote"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sustainability -->
+<section class="section" id="surdurulebilirlik">
+  <div class="wrap">
+    <div class="sus-grid">
+      <div>
+        <p class="kicker" data-i18n="sus_kicker">İyi Bir Dünya İçin</p>
+        <h2 data-i18n="sus_title">Sürdürülebilirlik yolculuğumuz</h2>
+        <p class="lede" data-pretext data-i18n="sus_lede">Sürdürülebilirlik yolculuğumuza 8 yıl önce başladık. İklim, insan ve inovasyon başlıklarını ele aldığımız stratejimizde, geleceğe yaşanabilir bir dünya bırakmak için çalışmalarımızı sürdürüyoruz.</p>
+        <div class="hero-actions" style="margin-top: 30px;">
+          <a class="btn btn-primary" href="#iletisim"><span data-i18n="sus_btn">Yolculuğu Keşfet</span> <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="sus-pillars">
+        <div class="sus-pillar">
+          <i data-lucide="leaf"></i>
+          <div><div class="t" data-i18n="pil1_t">Çevresel Yönetim</div><div class="d" data-i18n="pil1_d">Üretimde atık azaltımı ve çevresel etki takibi</div></div>
+        </div>
+        <div class="sus-pillar">
+          <i data-lucide="battery-charging"></i>
+          <div><div class="t" data-i18n="pil2_t">Enerji Verimliliği</div><div class="d" data-i18n="pil2_d">Düşük tüketimli makine tasarımı ve verimli tesisler</div></div>
+        </div>
+        <div class="sus-pillar">
+          <i data-lucide="users"></i>
+          <div><div class="t" data-i18n="pil3_t">Eğitim ve Farkındalık</div><div class="d" data-i18n="pil3_d">Çalışan ve paydaş odaklı sürdürülebilirlik kültürü</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section" id="haberler">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-i18n="news_kicker">Basında Biz</p>
+        <h2 data-i18n="news_title">Sağlam Makina haberler</h2>
+      </div>
+      <a class="section-link" href="#iletisim"><span data-i18n="news_link">Tüm Haberler</span> <i data-lucide="arrow-up-right"></i></a>
+    </div>
+    <div class="news-grid">
+      <a class="news-card" href="#iletisim">
+        <img class="news-img" src="assets/haber-makine.png" alt="Punta kaynak makinesi" loading="lazy">
+        <div class="news-body">
+          <span class="news-date">01/09/2024</span>
+          <h3 data-i18n="n1_t">Makine Sektörünün Dünü, Bugünü ve Yarını</h3>
+          <p data-i18n="n1_d">40 yıllık sanayi deneyimimizle Türk makine sektörünün dönüşümünü değerlendiriyoruz.</p>
+          <span class="news-more" data-i18n="n1_m">Daha fazla oku →</span>
+        </div>
+      </a>
+      <a class="news-card" href="#iletisim">
+        <img class="news-img" src="assets/kariyer.webp" alt="Sağlam Makina ofisi" loading="lazy">
+        <div class="news-body">
+          <span class="news-date">2025</span>
+          <h3 data-i18n="n2_t">40. Yılımızı Kutluyoruz</h3>
+          <p data-i18n="n2_d">1985'ten bugüne uzanan hikâyemizi, müşterilerimizin anılarıyla ölümsüzleştiriyoruz.</p>
+          <span class="news-more" data-i18n="n2_m">Hikayeni paylaş →</span>
+        </div>
+      </a>
+      <a class="news-card" href="#iletisim">
+        <img class="news-img" src="assets/uretim.jpg" alt="Endüstriyel tesis" loading="lazy">
+        <div class="news-body">
+          <span class="news-date" data-i18n="n3_date">Fuarlar</span>
+          <h3 data-i18n="n3_t">Uluslararası Fuar Takvimi</h3>
+          <p data-i18n="n3_d">Yıl boyunca katıldığımız yurt içi ve yurt dışı fuarlarda makinelerimizi yerinde inceleyin.</p>
+          <span class="news-more" data-i18n="n3_m">Fuar takvimi →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="iletisim">
+  <div class="wrap">
+    <div>
+      <h2 data-i18n="cta_title">Üretiminiz için doğru makineyi birlikte seçelim.</h2>
+      <p data-pretext data-i18n="cta_p">Teklif talebinizi oluşturun; mühendis ekibimiz üretim ihtiyacınıza uygun kapasite ve konfigürasyonu sizinle birlikte belirlesin.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-dark" href="mailto:bilgi@saglammakina.com"><span data-i18n="cta_btn1">Teklif Talebi Oluştur</span> <i data-lucide="file-text"></i></a>
+      <a class="btn btn-outline-dark" href="https://wa.me/902244824482"><span data-i18n="cta_btn2">WhatsApp Destek</span> <i data-lucide="message-circle"></i></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#">
+          <img class="brand-logo" src="assets/logo.png" alt="Sağlamlar — Sağlam Makina">
+        </a>
+        <p data-pretext data-i18n="f_about">Punta kaynak makinelerinde çözüm ortağınız. Yüksek kalite ve dayanıklılıkta, uzun ömürlü endüstriyel kaynak makineleri üretiyoruz.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_col_products">Ürün Grupları</h4>
+        <ul>
+          <li><a href="#urunler" data-i18n="p1_t">Punta Kaynak Makineleri</a></li>
+          <li><a href="#urunler" data-i18n="p2_t">Tel Punta Kaynak Makineleri</a></li>
+          <li><a href="#urunler" data-i18n="p3_t">Dikiş Kaynak Makineleri</a></li>
+          <li><a href="#urunler" data-i18n="p4_t">Form Makineleri</a></li>
+          <li><a href="#urunler" data-i18n="p5_t">Soğutma Sistemleri</a></li>
+          <li><a href="#urunler" data-i18n="p6_t">Yedek Parça &amp; Ekipmanlar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_col_corporate">Kurumsal</h4>
+        <ul>
+          <li><a href="#kurumsal" data-i18n="fk1">Hakkımızda</a></li>
+          <li><a href="#kurumsal" data-i18n="fk2">Tarihçe</a></li>
+          <li><a href="#kurumsal" data-i18n="fk3">Değerlerimiz</a></li>
+          <li><a href="#surdurulebilirlik" data-i18n="fk4">Sürdürülebilirlik</a></li>
+          <li><a href="#haberler" data-i18n="fk5">Sağlam Blog</a></li>
+          <li><a href="hesap.html" data-i18n="nav_calc">Hesaplayıcı</a></li>
+          <li><a href="#iletisim" data-i18n="fk6">Kariyer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_col_contact">İletişim</h4>
+        <ul class="footer-contact">
+          <li><i data-lucide="map-pin"></i> <span>Çalı Mahallesi Kanal Caddesi No:15 Nilüfer / Bursa</span></li>
+          <li><i data-lucide="phone"></i> <span>+90 224 482 44 82</span></li>
+          <li><i data-lucide="mail"></i> <span>bilgi@saglammakina.com</span></li>
+          <li><i data-lucide="clock"></i> <span data-i18n="f_hours">Hafta içi: 08:00 – 18:30</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="f_copy">© 2025 Sağlam Makina. Tüm Hakları Saklıdır.</span>
+      <span class="mono">EST. 1985 — BURSA / TÜRKİYE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lucide icons -->
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  // Mobil menü
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Tema değiştirici
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', cur);
+    localStorage.setItem('sm-theme', cur);
+  });
+</script>
+
+<!-- i18n: TR / EN / AR -->
+<script>
+const I18N = {
+  tr: {
+    _dir: 'ltr',
+    top_hours: 'Çağrı Merkezi — Hafta içi 08:00–18:30',
+    nav_products: 'Ürünler', nav_sectors: 'Sektörler', nav_corporate: 'Kurumsal',
+    nav_sustain: 'Sürdürülebilirlik', nav_news: 'Haberler', nav_contact: 'İletişim',
+    nav_quote: 'Teklif Talebi', nav_calc: 'Hesaplayıcı', nav_calc_long: 'Tel Panel Hesabı',
+    hero_kicker: 'Endüstriyel Kaynak Teknolojileri',
+    hero_title: '3 kıtada, <span class="hl">31 ülkeye</span> makine ihracatı.',
+    hero_lede: '40 yıllık sanayi ve hizmet deneyimi, lider iş ortaklarıyla küresel büyüme. Punta kaynak, dikiş kaynak ve form makinelerinde endüstriyel üretimin çözüm ortağıyız.',
+    tag1: '#PuntaKaynak', tag2: '#DikişKaynak', tag3: '#PanelÇitKaynak', tag4: '#FormMakineleri',
+    hero_btn_products: 'Ürünleri Keşfet', hero_btn_support: 'Teknik Destek',
+    stat1: 'yıllık sanayi ve hizmet deneyimi', stat2: 'ülkeye aktif makine ihracatı',
+    stat3: 'kıtada endüstriyel iş ortaklığı', stat4: 'ana ürün grubunda üretim',
+    bar1: 'EST. 1985 — BURSA', bar2: '40+ YIL DENEYİM', bar3: '3 KITA · 31 ÜLKE', bar4: '%100 YERLİ ÜRETİM',
+    prod_kicker: 'Ürün Grupları',
+    prod_title: 'Üretim hattınıza güç katan<br>makine aileleri',
+    prod_link: 'Tüm Ürünler',
+    p1_t: 'Punta Kaynak Makineleri', p1_d: 'Ayak pedallı, üstten kollu, projeksiyon, alın, askılı, masa tipi ve çok noktalı seriler.',
+    p2_t: 'Tel Punta Kaynak Makineleri', p2_d: 'CNC tel punta, çelik hasır ve panel çit kaynak makineleri.',
+    p3_t: 'Dikiş Kaynak Makineleri', p3_d: 'Boy dikiş, kenar dikiş, universal ve işe özel dikiş kaynak çözümleri.',
+    p4_t: 'Form Makineleri', p4_d: 'Tel kesme, tel bükme ve tel doğrultma makineleri.',
+    p5_t: 'Soğutma Sistemleri', p5_d: 'Kaynak hatlarında kesintisiz verim için endüstriyel soğutma üniteleri.',
+    p6_t: 'Yedek Parça & Ekipmanlar', p6_d: 'Orijinal yedek parça ve ekipmanlarla uzun ömürlü makine performansı.',
+    sec_kicker: 'Sektörel Projeler',
+    sec_title: 'Sektöründe öncü<br>faaliyet gruplarımız',
+    sec_link: 'Projeleri İncele',
+    s1_t: 'Beyaz Eşya ve Ev Aletleri', s1_d: 'Buzdolabı rafından fırın gövdesine, seri üretim hatları için hassas punta çözümleri.',
+    s2_t: 'Enerji ve İklimlendirme', s2_d: 'Radyatör, kombi ve iklimlendirme ekipmanlarında dikiş ve punta kaynak hatları.',
+    s3_t: 'İnşaat ve Yapı', s3_d: 'Çelik hasır ve panel çit üretiminde yüksek kapasiteli çok noktalı kaynak sistemleri.',
+    s4_t: 'Otomotiv Sanayi', s4_d: 'Gövde ve şasi komponentlerinde otomasyona hazır projeksiyon kaynak makineleri.',
+    s5_t: 'Üretim ve İmalat', s5_d: 'Genel imalat sanayine işe özel tasarlanan kaynak ve form makineleri.',
+    about_kicker: 'Kurumsal',
+    about_title: "Türkiye'den dünyaya,<br>1985'ten beri.",
+    about_cap: 'Punta kaynak uygulaması — tel raf üretimi',
+    about_p1: "Sağlam Makina'nın temel stratejisi; Türkiye ekonomisine katma değer yaratmaya devam ederken, yenilikçi ürün ve hizmetler geliştirmeye odaklı, ufku dünya pazarlarına açık bir vizyon üzerine kurulu.",
+    about_p2: '2025 yılında 40. kuruluş yıl dönümünü kutlayan Sağlam Makina; başta Türkiye olmak üzere dünyanın farklı pazarlarında beyaz eşya, inşaat, otomotiv ve diğer sektörlere hitap ederek istikrarlı büyümesini sürdürüyor.',
+    about_p3: 'Yüksek kalite ve dayanıklılıkta ürettiğimiz makineler; kullanıcı dostu arayüzleri ve yüksek performanslarıyla endüstriyel üretim süreçlerinde verimliliği ve hassasiyeti artırıyor.',
+    fact1: "Bursa'da kuruluş", fact2: 'kuruluş yıl dönümü — 2025', fact3: 'ülkeye ihracat', fact4: 'ana sektöre çözüm',
+    about_btn: 'Hikayeni Paylaş',
+    sus_kicker: 'İyi Bir Dünya İçin',
+    sus_title: 'Sürdürülebilirlik yolculuğumuz',
+    sus_lede: 'Sürdürülebilirlik yolculuğumuza 8 yıl önce başladık. İklim, insan ve inovasyon başlıklarını ele aldığımız stratejimizde, geleceğe yaşanabilir bir dünya bırakmak için çalışmalarımızı sürdürüyoruz.',
+    sus_btn: 'Yolculuğu Keşfet',
+    pil1_t: 'Çevresel Yönetim', pil1_d: 'Üretimde atık azaltımı ve çevresel etki takibi',
+    pil2_t: 'Enerji Verimliliği', pil2_d: 'Düşük tüketimli makine tasarımı ve verimli tesisler',
+    pil3_t: 'Eğitim ve Farkındalık', pil3_d: 'Çalışan ve paydaş odaklı sürdürülebilirlik kültürü',
+    news_kicker: 'Basında Biz', news_title: 'Sağlam Makina haberler', news_link: 'Tüm Haberler',
+    n1_t: 'Makine Sektörünün Dünü, Bugünü ve Yarını', n1_d: '40 yıllık sanayi deneyimimizle Türk makine sektörünün dönüşümünü değerlendiriyoruz.', n1_m: 'Daha fazla oku →',
+    n2_t: '40. Yılımızı Kutluyoruz', n2_d: "1985'ten bugüne uzanan hikâyemizi, müşterilerimizin anılarıyla ölümsüzleştiriyoruz.", n2_m: 'Hikayeni paylaş →',
+    n3_date: 'Fuarlar', n3_t: 'Uluslararası Fuar Takvimi', n3_d: 'Yıl boyunca katıldığımız yurt içi ve yurt dışı fuarlarda makinelerimizi yerinde inceleyin.', n3_m: 'Fuar takvimi →',
+    cta_title: 'Üretiminiz için doğru makineyi birlikte seçelim.',
+    cta_p: 'Teklif talebinizi oluşturun; mühendis ekibimiz üretim ihtiyacınıza uygun kapasite ve konfigürasyonu sizinle birlikte belirlesin.',
+    cta_btn1: 'Teklif Talebi Oluştur', cta_btn2: 'WhatsApp Destek',
+    f_about: 'Punta kaynak makinelerinde çözüm ortağınız. Yüksek kalite ve dayanıklılıkta, uzun ömürlü endüstriyel kaynak makineleri üretiyoruz.',
+    f_col_products: 'Ürün Grupları', f_col_corporate: 'Kurumsal', f_col_contact: 'İletişim',
+    fk1: 'Hakkımızda', fk2: 'Tarihçe', fk3: 'Değerlerimiz', fk4: 'Sürdürülebilirlik', fk5: 'Sağlam Blog', fk6: 'Kariyer',
+    f_hours: 'Hafta içi: 08:00 – 18:30',
+    f_copy: '© 2025 Sağlam Makina. Tüm Hakları Saklıdır.'
+  },
+  en: {
+    _dir: 'ltr',
+    top_hours: 'Call Center — Weekdays 08:00–18:30',
+    nav_products: 'Products', nav_sectors: 'Sectors', nav_corporate: 'Corporate',
+    nav_sustain: 'Sustainability', nav_news: 'News', nav_contact: 'Contact',
+    nav_quote: 'Request a Quote', nav_calc: 'Calculator', nav_calc_long: 'Mesh Panel Calculator',
+    hero_kicker: 'Industrial Welding Technologies',
+    hero_title: 'Machine exports to <span class="hl">31 countries</span> across 3 continents.',
+    hero_lede: '40 years of industrial and service experience, global growth with leading partners. We are the solution partner of industrial production in spot welding, seam welding and forming machines.',
+    tag1: '#SpotWelding', tag2: '#SeamWelding', tag3: '#FencePanelWelding', tag4: '#FormingMachines',
+    hero_btn_products: 'Explore Products', hero_btn_support: 'Technical Support',
+    stat1: 'years of industrial and service experience', stat2: 'countries with active machine exports',
+    stat3: 'continents with industrial partnerships', stat4: 'main product groups in production',
+    bar1: 'EST. 1985 — BURSA', bar2: '40+ YEARS OF EXPERIENCE', bar3: '3 CONTINENTS · 31 COUNTRIES', bar4: '100% IN-HOUSE PRODUCTION',
+    prod_kicker: 'Product Groups',
+    prod_title: 'Machine families that power<br>your production line',
+    prod_link: 'All Products',
+    p1_t: 'Spot Welding Machines', p1_d: 'Foot-pedal, top-arm, projection, butt, suspended, bench-type and multi-spot series.',
+    p2_t: 'Wire Spot Welding Machines', p2_d: 'CNC wire spot, steel mesh and fence panel welding machines.',
+    p3_t: 'Seam Welding Machines', p3_d: 'Longitudinal, edge, universal and application-specific seam welding solutions.',
+    p4_t: 'Forming Machines', p4_d: 'Wire cutting, wire bending and wire straightening machines.',
+    p5_t: 'Cooling Systems', p5_d: 'Industrial cooling units for uninterrupted efficiency in welding lines.',
+    p6_t: 'Spare Parts & Equipment', p6_d: 'Long-lasting machine performance with original spare parts and equipment.',
+    sec_kicker: 'Sectoral Projects',
+    sec_title: 'Business lines leading<br>their sectors',
+    sec_link: 'View Projects',
+    s1_t: 'Home Appliances', s1_d: 'Precision spot welding for mass production lines, from refrigerator shelves to oven bodies.',
+    s2_t: 'Energy & HVAC', s2_d: 'Seam and spot welding lines for radiators, boilers and HVAC equipment.',
+    s3_t: 'Construction & Building', s3_d: 'High-capacity multi-spot welding systems for steel mesh and fence panel production.',
+    s4_t: 'Automotive Industry', s4_d: 'Automation-ready projection welding machines for body and chassis components.',
+    s5_t: 'Manufacturing', s5_d: 'Custom-designed welding and forming machines for general manufacturing.',
+    about_kicker: 'Corporate',
+    about_title: 'From Türkiye to the world,<br>since 1985.',
+    about_cap: 'Spot welding application — wire shelf production',
+    about_p1: "Sağlam Makina's core strategy is built on a vision open to global markets, focused on developing innovative products and services while continuing to add value to the Turkish economy.",
+    about_p2: 'Celebrating its 40th anniversary in 2025, Sağlam Makina continues its steady growth by serving home appliances, construction, automotive and other industries in Türkiye and markets around the world.',
+    about_p3: 'Our machines, built for high quality and durability, increase efficiency and precision in industrial production with user-friendly interfaces and high performance.',
+    fact1: 'Founded in Bursa', fact2: '40th anniversary — 2025', fact3: 'countries exported to', fact4: 'main sectors served',
+    about_btn: 'Share Your Story',
+    sus_kicker: 'For a Better World',
+    sus_title: 'Our sustainability journey',
+    sus_lede: 'We started our sustainability journey 8 years ago. Our strategy addresses climate, people and innovation, working to leave a livable world for future generations.',
+    sus_btn: 'Explore the Journey',
+    pil1_t: 'Environmental Management', pil1_d: 'Waste reduction and environmental impact tracking in production',
+    pil2_t: 'Energy Efficiency', pil2_d: 'Low-consumption machine design and efficient facilities',
+    pil3_t: 'Training & Awareness', pil3_d: 'A sustainability culture focused on employees and stakeholders',
+    news_kicker: 'In the Press', news_title: 'Sağlam Makina news', news_link: 'All News',
+    n1_t: 'The Past, Present and Future of the Machinery Industry', n1_d: 'We reflect on the transformation of the Turkish machinery industry with 40 years of experience.', n1_m: 'Read more →',
+    n2_t: 'Celebrating Our 40th Year', n2_d: 'We immortalize our story from 1985 to today with the memories of our customers.', n2_m: 'Share your story →',
+    n3_date: 'Fairs', n3_t: 'International Fair Calendar', n3_d: 'See our machines up close at the domestic and international fairs we attend throughout the year.', n3_m: 'Fair calendar →',
+    cta_title: "Let's choose the right machine for your production together.",
+    cta_p: 'Create your quote request; our engineering team will determine the right capacity and configuration for your production needs with you.',
+    cta_btn1: 'Request a Quote', cta_btn2: 'WhatsApp Support',
+    f_about: 'Your solution partner in spot welding machines. We build long-lasting industrial welding machines with high quality and durability.',
+    f_col_products: 'Product Groups', f_col_corporate: 'Corporate', f_col_contact: 'Contact',
+    fk1: 'About Us', fk2: 'History', fk3: 'Our Values', fk4: 'Sustainability', fk5: 'Sağlam Blog', fk6: 'Careers',
+    f_hours: 'Weekdays: 08:00 – 18:30',
+    f_copy: '© 2025 Sağlam Makina. All rights reserved.'
+  },
+  ar: {
+    _dir: 'rtl',
+    top_hours: 'مركز الاتصال — أيام الأسبوع 08:00–18:30',
+    nav_products: 'المنتجات', nav_sectors: 'القطاعات', nav_corporate: 'الشركة',
+    nav_sustain: 'الاستدامة', nav_news: 'الأخبار', nav_contact: 'اتصل بنا',
+    nav_quote: 'طلب عرض سعر', nav_calc: 'الحاسبة', nav_calc_long: 'حاسبة ألواح الشبك',
+    hero_kicker: 'تقنيات اللحام الصناعي',
+    hero_title: 'تصدير المكائن إلى <span class="hl">31 دولة</span> في 3 قارات.',
+    hero_lede: '40 عامًا من الخبرة الصناعية والخدمية، ونمو عالمي مع شركاء رائدين. نحن شريك الحلول للإنتاج الصناعي في مكائن اللحام النقطي واللحام الدرزي ومكائن التشكيل.',
+    tag1: '#اللحام_النقطي', tag2: '#اللحام_الدرزي', tag3: '#لحام_ألواح_السياج', tag4: '#مكائن_التشكيل',
+    hero_btn_products: 'استكشف المنتجات', hero_btn_support: 'الدعم الفني',
+    stat1: 'عامًا من الخبرة الصناعية والخدمية', stat2: 'دولة نصدّر إليها المكائن',
+    stat3: 'قارات من الشراكات الصناعية', stat4: 'مجموعات منتجات رئيسية',
+    bar1: 'التأسيس 1985 — بورصة', bar2: 'خبرة تتجاوز 40 عامًا', bar3: '3 قارات · 31 دولة', bar4: 'إنتاج محلي 100٪',
+    prod_kicker: 'مجموعات المنتجات',
+    prod_title: 'عائلات مكائن تمنح<br>خط إنتاجكم القوة',
+    prod_link: 'جميع المنتجات',
+    p1_t: 'مكائن اللحام النقطي', p1_d: 'سلاسل بدواسة قدم، وبذراع علوي، ولحام الإسقاط، واللحام التناكبي، والمعلّقة، والمنضدية، ومتعددة النقاط.',
+    p2_t: 'مكائن اللحام النقطي للأسلاك', p2_d: 'مكائن CNC للحام الأسلاك، والشبك الفولاذي، وألواح السياج.',
+    p3_t: 'مكائن اللحام الدرزي', p3_d: 'حلول لحام درزي طولي وجانبي وشامل ومخصص حسب التطبيق.',
+    p4_t: 'مكائن التشكيل', p4_d: 'مكائن قص الأسلاك وثنيها وتقويمها.',
+    p5_t: 'أنظمة التبريد', p5_d: 'وحدات تبريد صناعية لكفاءة متواصلة في خطوط اللحام.',
+    p6_t: 'قطع الغيار والمعدات', p6_d: 'أداء طويل الأمد للمكائن مع قطع غيار ومعدات أصلية.',
+    sec_kicker: 'مشاريع قطاعية',
+    sec_title: 'مجالات عمل رائدة<br>في قطاعاتها',
+    sec_link: 'استعرض المشاريع',
+    s1_t: 'الأجهزة المنزلية', s1_d: 'حلول لحام نقطي دقيقة لخطوط الإنتاج الكمي، من أرفف الثلاجات إلى هياكل الأفران.',
+    s2_t: 'الطاقة والتكييف', s2_d: 'خطوط لحام درزي ونقطي للمشعّات والغلايات ومعدات التكييف.',
+    s3_t: 'البناء والإنشاءات', s3_d: 'أنظمة لحام متعددة النقاط عالية الطاقة لإنتاج الشبك الفولاذي وألواح السياج.',
+    s4_t: 'صناعة السيارات', s4_d: 'مكائن لحام إسقاط جاهزة للأتمتة لمكوّنات الهيكل والشاسيه.',
+    s5_t: 'التصنيع والإنتاج', s5_d: 'مكائن لحام وتشكيل مصممة خصيصًا لقطاع التصنيع العام.',
+    about_kicker: 'الشركة',
+    about_title: 'من تركيا إلى العالم،<br>منذ عام 1985.',
+    about_cap: 'تطبيق لحام نقطي — إنتاج أرفف سلكية',
+    about_p1: 'تقوم استراتيجية Sağlam Makina الأساسية على رؤية منفتحة على الأسواق العالمية، تركّز على تطوير منتجات وخدمات مبتكرة مع مواصلة إضافة القيمة للاقتصاد التركي.',
+    about_p2: 'تحتفل Sağlam Makina بذكرى تأسيسها الأربعين في عام 2025، وتواصل نموها المستقر بخدمة قطاعات الأجهزة المنزلية والبناء والسيارات وغيرها في تركيا وأسواق العالم المختلفة.',
+    about_p3: 'مكائننا المصنوعة بجودة ومتانة عاليتين ترفع الكفاءة والدقة في عمليات الإنتاج الصناعي بواجهات سهلة الاستخدام وأداء عالٍ.',
+    fact1: 'التأسيس في بورصة', fact2: 'الذكرى الأربعون — 2025', fact3: 'دولة نصدّر إليها', fact4: 'قطاعات رئيسية نخدمها',
+    about_btn: 'شارك قصتك',
+    sus_kicker: 'من أجل عالم أفضل',
+    sus_title: 'رحلتنا نحو الاستدامة',
+    sus_lede: 'بدأنا رحلتنا نحو الاستدامة قبل 8 أعوام. تتناول استراتيجيتنا محاور المناخ والإنسان والابتكار، ونعمل لنترك للأجيال القادمة عالمًا صالحًا للعيش.',
+    sus_btn: 'اكتشف الرحلة',
+    pil1_t: 'الإدارة البيئية', pil1_d: 'تقليل الهدر في الإنتاج وتتبّع الأثر البيئي',
+    pil2_t: 'كفاءة الطاقة', pil2_d: 'تصميم مكائن منخفضة الاستهلاك ومنشآت عالية الكفاءة',
+    pil3_t: 'التدريب والتوعية', pil3_d: 'ثقافة استدامة تركّز على الموظفين والشركاء',
+    news_kicker: 'في الصحافة', news_title: 'أخبار Sağlam Makina', news_link: 'جميع الأخبار',
+    n1_t: 'ماضي صناعة المكائن وحاضرها ومستقبلها', n1_d: 'نقيّم تحوّل صناعة المكائن التركية بخبرة صناعية تمتد 40 عامًا.', n1_m: '← اقرأ المزيد',
+    n2_t: 'نحتفل بعامنا الأربعين', n2_d: 'نخلّد قصتنا الممتدة من 1985 حتى اليوم بذكريات عملائنا.', n2_m: '← شارك قصتك',
+    n3_date: 'المعارض', n3_t: 'جدول المعارض الدولية', n3_d: 'شاهدوا مكائننا عن قرب في المعارض المحلية والدولية التي نشارك فيها على مدار العام.', n3_m: '← جدول المعارض',
+    cta_title: 'لنختر معًا الماكينة المناسبة لإنتاجكم.',
+    cta_p: 'أنشئوا طلب عرض السعر؛ وسيحدد فريقنا الهندسي معكم السعة والتهيئة المناسبتين لاحتياجات إنتاجكم.',
+    cta_btn1: 'أنشئ طلب عرض سعر', cta_btn2: 'دعم واتساب',
+    f_about: 'شريككم في حلول مكائن اللحام النقطي. نصنع مكائن لحام صناعية طويلة العمر بجودة ومتانة عاليتين.',
+    f_col_products: 'مجموعات المنتجات', f_col_corporate: 'الشركة', f_col_contact: 'اتصل بنا',
+    fk1: 'من نحن', fk2: 'تاريخنا', fk3: 'قيمنا', fk4: 'الاستدامة', fk5: 'مدونة Sağlam', fk6: 'الوظائف',
+    f_hours: 'أيام الأسبوع: 08:00 – 18:30',
+    f_copy: '© 2025 Sağlam Makina. جميع الحقوق محفوظة.'
+  }
+};
+
+function applyLang(lang) {
+  const dict = I18N[lang] || I18N.tr;
+  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('dir', dict._dir);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n-html')];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang-switch button').forEach(b =>
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang))
+  );
+  localStorage.setItem('sm-lang', lang);
+  if (window.__pretextRefresh) window.__pretextRefresh();
+}
+
+document.querySelectorAll('.lang-switch button').forEach(b =>
+  b.addEventListener('click', () => applyLang(b.dataset.lang))
+);
+
+const savedLang = localStorage.getItem('sm-lang') || 'tr';
+if (savedLang !== 'tr') applyLang(savedLang);
+</script>
+
+<!-- Pretext: gerçek metin yerleşimi — yükseklikler hesaplanır, resize'da yeniden akar -->
+<script src="./pretext-inline.js"></script>
+<script>
+document.fonts.ready.then(() => {
+  const { prepare, layout } = window.Pretext;
+
+  const els = document.querySelectorAll('[data-pretext]');
+  const prepared = new Map();
+
+  function prepEl(el) {
+    const cs = getComputedStyle(el);
+    const font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+    prepared.set(el, { handle: prepare(el.textContent, font), lineHeight: parseFloat(cs.lineHeight) });
+  }
+
+  function relayout() {
+    for (const [el, { handle, lineHeight }] of prepared) {
+      if (!el.clientWidth) continue;
+      const { height } = layout(handle, el.clientWidth, lineHeight);
+      el.style.minHeight = `${height}px`;
+    }
+  }
+
+  els.forEach(prepEl);
+  relayout();
+
+  const ro = new ResizeObserver(() => relayout());
+  ro.observe(document.body);
+
+  // Dil değişiminde metinler değişir — hepsini yeniden ölç
+  window.__pretextRefresh = () => { els.forEach(prepEl); relayout(); };
+});
+</script>
+</body>
+</html>

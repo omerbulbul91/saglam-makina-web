@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasır Panel Ağırlık Hesaplayıcı — Sağlam Makina</title>
+<meta name="description" content="Hasır çelik tel panel ağırlık hesaplayıcı: tel uzunlukları, göz aralıkları ve tel çaplarından panel toplam ağırlığını ve kg/m² değerini anında hesaplayın.">
+
+<script>
+(function(){
+  var t = localStorage.getItem('sm-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <span class="topbar-item hours"><i data-lucide="clock"></i> <span data-i18n="top_hours">Çağrı Merkezi — Hafta içi 08:00–18:30</span></span>
+      <a class="topbar-item" href="tel:+902244824482"><i data-lucide="phone"></i> +90 224 482 44 82</a>
+    </div>
+    <div class="topbar-left">
+      <a class="topbar-item mail" href="mailto:bilgi@saglammakina.com"><i data-lucide="mail"></i> bilgi@saglammakina.com</a>
+      <div class="lang-switch" role="group" aria-label="Dil seçimi">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Sağlam Makina ana sayfa">
+      <img class="brand-logo" src="assets/logo.png" alt="Sağlamlar — Sağlam Makina">
+      <span class="brand-sub">Est. 1985 · Bursa</span>
+    </a>
+    <nav class="main-nav" aria-label="Ana menü">
+      <a href="index.html#urunler" data-i18n="nav_products">Ürünler</a>
+      <a href="index.html#sektorler" data-i18n="nav_sectors">Sektörler</a>
+      <a href="index.html#kurumsal" data-i18n="nav_corporate">Kurumsal</a>
+      <a href="hesap.html" data-i18n="nav_calc" style="color: var(--text); border-bottom-color: var(--accent);">Hesaplayıcı</a>
+      <a href="index.html#iletisim" data-i18n="nav_contact">İletişim</a>
+    </nav>
+    <div class="header-tools">
+      <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+      <a class="header-cta" href="index.html#iletisim"><span data-i18n="nav_quote">Teklif Talebi</span> <i data-lucide="arrow-right"></i></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileNav">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobil menü">
+    <a href="index.html#urunler" data-i18n="nav_products">Ürünler</a>
+    <a href="index.html#sektorler" data-i18n="nav_sectors">Sektörler</a>
+    <a href="index.html#kurumsal" data-i18n="nav_corporate">Kurumsal</a>
+    <a href="index.html#iletisim" data-i18n="nav_contact">İletişim</a>
+    <a href="hesap.html" data-i18n="nav_calc_long">Tel Panel Hesabı</a>
+  </nav>
+</header>
+
+<main>
+<!-- Sayfa başlığı -->
+<section class="calc-hero">
+  <div class="wrap">
+    <p class="kicker" data-i18n="c_kicker">Mühendislik Araçları</p>
+    <h1 data-i18n="c_title">Hasır Çelik Tel Panel Ağırlık Hesabı</h1>
+    <p class="lede" data-i18n="c_lede">Panel ölçülerini, göz aralıklarını ve tel çaplarını girin; tel adetleri, uç çıkıntıları, toplam ağırlık ve metrekare ağırlığı anında hesaplansın. Hesap, çelik özgül ağırlığı 7,85 kg/dm³ kabulüyle yapılır.</p>
+  </div>
+</section>
+
+<!-- Hesaplayıcı -->
+<section class="section" style="padding-top: clamp(36px, 4vw, 56px);">
+  <div class="wrap">
+    <div class="calc-grid">
+
+      <!-- Girdiler -->
+      <div class="calc-panel">
+        <div class="calc-panel-head"><span data-i18n="c_in_head">Girilecek Değerler</span><span class="dot"></span></div>
+        <div class="calc-panel-body">
+          <div class="calc-fields-2">
+            <div class="calc-field">
+              <label for="in-atki-uzunluk" data-i18n="c_l1">Atkı Tel Uzunluğu</label>
+              <div class="calc-input"><input type="number" id="in-atki-uzunluk" value="1500" min="0" step="10" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h1">Her bir atkı telinin uzunluğu (panel eni)</p>
+            </div>
+            <div class="calc-field">
+              <label for="in-cozgu-uzunluk" data-i18n="c_l2">Çözgü Tel Uzunluğu</label>
+              <div class="calc-input"><input type="number" id="in-cozgu-uzunluk" value="3000" min="0" step="10" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h2">Her bir çözgü telinin uzunluğu (panel boyu)</p>
+            </div>
+          </div>
+          <div class="calc-fields-2">
+            <div class="calc-field">
+              <label for="in-atki-goz" data-i18n="c_l3">Atkı Göz Aralığı</label>
+              <div class="calc-input"><input type="number" id="in-atki-goz" value="40" min="0" step="1" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h3">İstenen atkı telleri arası mesafe (nominal)</p>
+            </div>
+            <div class="calc-field">
+              <label for="in-cozgu-goz" data-i18n="c_l4">Çözgü Göz Aralığı</label>
+              <div class="calc-input"><input type="number" id="in-cozgu-goz" value="40" min="0" step="1" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h4">İstenen çözgü telleri arası mesafe (nominal)</p>
+            </div>
+          </div>
+          <div class="calc-fields-2">
+            <div class="calc-field">
+              <label for="in-atki-cap" data-i18n="c_l5">Atkı Tel Çapı</label>
+              <div class="calc-input"><input type="number" id="in-atki-cap" value="3" min="0" step="0.1" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h5">Atkı teli çapı</p>
+            </div>
+            <div class="calc-field">
+              <label for="in-cozgu-cap" data-i18n="c_l6">Çözgü Tel Çapı</label>
+              <div class="calc-input"><input type="number" id="in-cozgu-cap" value="3" min="0" step="0.1" inputmode="decimal"><span class="unit">mm</span></div>
+              <p class="hint" data-i18n="c_h6">Çözgü teli çapı</p>
+            </div>
+          </div>
+          <div class="calc-warn" id="calcWarn">
+            <i data-lucide="triangle-alert"></i>
+            <span data-i18n="c_warn">Uç çıkıntısı negatif çıktı — teller bu göz aralığıyla panele sığmıyor. Göz aralığını veya tel uzunluğunu kontrol edin.</span>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="btn btn-line" id="btnReset"><i data-lucide="rotate-ccw"></i> <span data-i18n="c_reset">Varsayılanlara Dön</span></button>
+            <button type="button" class="btn btn-line" onclick="window.print()"><i data-lucide="printer"></i> <span data-i18n="c_print">Yazdır</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sonuçlar -->
+      <div>
+        <div class="calc-panel">
+          <div class="calc-panel-head"><span data-i18n="c_out_head">Hesaplanan Değerler</span><span style="font-family: var(--font-mono);">AUTO</span></div>
+          <div class="calc-panel-body" style="gap: 0;">
+            <div class="calc-row"><span class="k" data-i18n="c_r1">Atkı Tel Adedi</span><span class="v"><span id="r-atki-adet">—</span> <span class="u" data-i18n="u_adet">adet</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r2">Çözgü Tel Adedi</span><span class="v"><span id="r-cozgu-adet">—</span> <span class="u" data-i18n="u_adet">adet</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r3">Atkı Teli Uç Çıkıntısı (her uçta)</span><span class="v"><span id="r-atki-cikinti">—</span> <span class="u">mm</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r4">Çözgü Teli Uç Çıkıntısı (her uçta)</span><span class="v"><span id="r-cozgu-cikinti">—</span> <span class="u">mm</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r5">Atkı Tel Toplam Uzunluk</span><span class="v"><span id="r-atki-toplam-m">—</span> <span class="u">m</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r6">Çözgü Tel Toplam Uzunluk</span><span class="v"><span id="r-cozgu-toplam-m">—</span> <span class="u">m</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r7">Atkı Tel Birim Ağırlığı</span><span class="v"><span id="r-atki-kgm">—</span> <span class="u">kg/m</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r8">Çözgü Tel Birim Ağırlığı</span><span class="v"><span id="r-cozgu-kgm">—</span> <span class="u">kg/m</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r9">Atkı Tel Toplam Ağırlık</span><span class="v"><span id="r-atki-kg">—</span> <span class="u">kg</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r10">Çözgü Tel Toplam Ağırlık</span><span class="v"><span id="r-cozgu-kg">—</span> <span class="u">kg</span></span></div>
+            <div class="calc-row"><span class="k" data-i18n="c_r11">Panel Alanı</span><span class="v"><span id="r-alan">—</span> <span class="u">m²</span></span></div>
+          </div>
+        </div>
+        <div class="calc-total" style="margin-top: 16px;">
+          <div>
+            <div class="t-label" data-i18n="c_total">Panel Toplam Ağırlığı</div>
+            <div class="t-value"><span id="r-toplam">—</span> <span class="u">kg</span></div>
+          </div>
+          <div>
+            <div class="t-label" data-i18n="c_sqm">Metrekare Ağırlığı</div>
+            <div class="t-value"><span id="r-m2">—</span> <span class="u">kg/m²</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer (kısa) -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span data-i18n="f_copy">© 2025 Sağlam Makina. Tüm Hakları Saklıdır.</span>
+      <span class="mono">EST. 1985 — BURSA / TÜRKİYE</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', cur);
+    localStorage.setItem('sm-theme', cur);
+  });
+</script>
+
+<!-- i18n -->
+<script>
+const I18N = {
+  tr: {
+    _dir: 'ltr', _locale: 'tr-TR',
+    top_hours: 'Çağrı Merkezi — Hafta içi 08:00–18:30',
+    nav_products: 'Ürünler', nav_sectors: 'Sektörler', nav_corporate: 'Kurumsal',
+    nav_contact: 'İletişim', nav_quote: 'Teklif Talebi', nav_calc: 'Hesaplayıcı', nav_calc_long: 'Tel Panel Hesabı',
+    c_kicker: 'Mühendislik Araçları',
+    c_title: 'Hasır Çelik Tel Panel Ağırlık Hesabı',
+    c_lede: 'Panel ölçülerini, göz aralıklarını ve tel çaplarını girin; tel adetleri, uç çıkıntıları, toplam ağırlık ve metrekare ağırlığı anında hesaplansın. Hesap, çelik özgül ağırlığı 7,85 kg/dm³ kabulüyle yapılır.',
+    c_in_head: 'Girilecek Değerler', c_out_head: 'Hesaplanan Değerler',
+    c_l1: 'Atkı Tel Uzunluğu', c_h1: 'Her bir atkı telinin uzunluğu (panel eni)',
+    c_l2: 'Çözgü Tel Uzunluğu', c_h2: 'Her bir çözgü telinin uzunluğu (panel boyu)',
+    c_l3: 'Atkı Göz Aralığı', c_h3: 'İstenen atkı telleri arası mesafe (nominal)',
+    c_l4: 'Çözgü Göz Aralığı', c_h4: 'İstenen çözgü telleri arası mesafe (nominal)',
+    c_l5: 'Atkı Tel Çapı', c_h5: 'Atkı teli çapı',
+    c_l6: 'Çözgü Tel Çapı', c_h6: 'Çözgü teli çapı',
+    c_r1: 'Atkı Tel Adedi', c_r2: 'Çözgü Tel Adedi',
+    c_r3: 'Atkı Teli Uç Çıkıntısı (her uçta)', c_r4: 'Çözgü Teli Uç Çıkıntısı (her uçta)',
+    c_r5: 'Atkı Tel Toplam Uzunluk', c_r6: 'Çözgü Tel Toplam Uzunluk',
+    c_r7: 'Atkı Tel Birim Ağırlığı', c_r8: 'Çözgü Tel Birim Ağırlığı',
+    c_r9: 'Atkı Tel Toplam Ağırlık', c_r10: 'Çözgü Tel Toplam Ağırlık',
+    c_r11: 'Panel Alanı',
+    c_total: 'Panel Toplam Ağırlığı', c_sqm: 'Metrekare Ağırlığı',
+    c_warn: 'Uç çıkıntısı negatif çıktı — teller bu göz aralığıyla panele sığmıyor. Göz aralığını veya tel uzunluğunu kontrol edin.',
+    c_reset: 'Varsayılanlara Dön', c_print: 'Yazdır',
+    u_adet: 'adet',
+    f_copy: '© 2025 Sağlam Makina. Tüm Hakları Saklıdır.'
+  },
+  en: {
+    _dir: 'ltr', _locale: 'en-US',
+    top_hours: 'Call Center — Weekdays 08:00–18:30',
+    nav_products: 'Products', nav_sectors: 'Sectors', nav_corporate: 'Corporate',
+    nav_contact: 'Contact', nav_quote: 'Request a Quote', nav_calc: 'Calculator', nav_calc_long: 'Mesh Panel Calculator',
+    c_kicker: 'Engineering Tools',
+    c_title: 'Steel Mesh Panel Weight Calculator',
+    c_lede: 'Enter panel dimensions, mesh openings and wire diameters; wire counts, end overhangs, total weight and weight per square meter are calculated instantly. Steel density is assumed as 7.85 kg/dm³.',
+    c_in_head: 'Input Values', c_out_head: 'Calculated Values',
+    c_l1: 'Weft Wire Length', c_h1: 'Length of each weft wire (panel width)',
+    c_l2: 'Warp Wire Length', c_h2: 'Length of each warp wire (panel height)',
+    c_l3: 'Weft Mesh Opening', c_h3: 'Desired spacing between weft wires (nominal)',
+    c_l4: 'Warp Mesh Opening', c_h4: 'Desired spacing between warp wires (nominal)',
+    c_l5: 'Weft Wire Diameter', c_h5: 'Diameter of the weft wire',
+    c_l6: 'Warp Wire Diameter', c_h6: 'Diameter of the warp wire',
+    c_r1: 'Weft Wire Count', c_r2: 'Warp Wire Count',
+    c_r3: 'Weft Wire End Overhang (each end)', c_r4: 'Warp Wire End Overhang (each end)',
+    c_r5: 'Total Weft Wire Length', c_r6: 'Total Warp Wire Length',
+    c_r7: 'Weft Wire Unit Weight', c_r8: 'Warp Wire Unit Weight',
+    c_r9: 'Total Weft Wire Weight', c_r10: 'Total Warp Wire Weight',
+    c_r11: 'Panel Area',
+    c_total: 'Total Panel Weight', c_sqm: 'Weight per m²',
+    c_warn: 'End overhang is negative — the wires do not fit the panel with this mesh opening. Check the opening or wire length.',
+    c_reset: 'Reset to Defaults', c_print: 'Print',
+    u_adet: 'pcs',
+    f_copy: '© 2025 Sağlam Makina. All rights reserved.'
+  },
+  ar: {
+    _dir: 'rtl', _locale: 'ar',
+    top_hours: 'مركز الاتصال — أيام الأسبوع 08:00–18:30',
+    nav_products: 'المنتجات', nav_sectors: 'القطاعات', nav_corporate: 'الشركة',
+    nav_contact: 'اتصل بنا', nav_quote: 'طلب عرض سعر', nav_calc: 'الحاسبة', nav_calc_long: 'حاسبة ألواح الشبك',
+    c_kicker: 'أدوات هندسية',
+    c_title: 'حاسبة وزن ألواح الشبك الفولاذي',
+    c_lede: 'أدخلوا أبعاد اللوح وفتحات الشبك وأقطار الأسلاك؛ لتُحسب أعداد الأسلاك والبروزات الطرفية والوزن الإجمالي ووزن المتر المربع فورًا. تُفترض كثافة الفولاذ 7.85 كغ/دسم³.',
+    c_in_head: 'قيم الإدخال', c_out_head: 'القيم المحسوبة',
+    c_l1: 'طول سلك اللُحمة', c_h1: 'طول كل سلك لُحمة (عرض اللوح)',
+    c_l2: 'طول سلك السَّدى', c_h2: 'طول كل سلك سَدى (طول اللوح)',
+    c_l3: 'فتحة شبك اللُحمة', c_h3: 'المسافة المطلوبة بين أسلاك اللُحمة (اسمية)',
+    c_l4: 'فتحة شبك السَّدى', c_h4: 'المسافة المطلوبة بين أسلاك السَّدى (اسمية)',
+    c_l5: 'قطر سلك اللُحمة', c_h5: 'قطر سلك اللُحمة',
+    c_l6: 'قطر سلك السَّدى', c_h6: 'قطر سلك السَّدى',
+    c_r1: 'عدد أسلاك اللُحمة', c_r2: 'عدد أسلاك السَّدى',
+    c_r3: 'بروز طرف سلك اللُحمة (كل طرف)', c_r4: 'بروز طرف سلك السَّدى (كل طرف)',
+    c_r5: 'إجمالي طول أسلاك اللُحمة', c_r6: 'إجمالي طول أسلاك السَّدى',
+    c_r7: 'الوزن النوعي لسلك اللُحمة', c_r8: 'الوزن النوعي لسلك السَّدى',
+    c_r9: 'إجمالي وزن أسلاك اللُحمة', c_r10: 'إجمالي وزن أسلاك السَّدى',
+    c_r11: 'مساحة اللوح',
+    c_total: 'الوزن الإجمالي للوح', c_sqm: 'الوزن لكل م²',
+    c_warn: 'البروز الطرفي سالب — الأسلاك لا تتسع في اللوح بهذه الفتحة. تحققوا من الفتحة أو طول السلك.',
+    c_reset: 'إعادة الضبط', c_print: 'طباعة',
+    u_adet: 'قطعة',
+    f_copy: '© 2025 Sağlam Makina. جميع الحقوق محفوظة.'
+  }
+};
+
+let curLang = localStorage.getItem('sm-lang') || 'tr';
+
+function applyLang(lang) {
+  curLang = lang;
+  const dict = I18N[lang] || I18N.tr;
+  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('dir', dict._dir);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('.lang-switch button').forEach(b =>
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang))
+  );
+  localStorage.setItem('sm-lang', lang);
+  calc(); // sayı biçimleri yerel ayara göre yenilensin
+}
+
+document.querySelectorAll('.lang-switch button').forEach(b =>
+  b.addEventListener('click', () => applyLang(b.dataset.lang))
+);
+</script>
+
+<!-- Hesap motoru — Excel (hasir_tel_agirlik_hesabi.xlsx) formülleriyle birebir -->
+<script>
+const DENSITY = 7850; // kg/m³ — çelik özgül ağırlığı
+
+const $in = id => document.getElementById(id);
+const inputs = ['in-atki-uzunluk','in-cozgu-uzunluk','in-atki-goz','in-cozgu-goz','in-atki-cap','in-cozgu-cap'].map($in);
+const DEFAULTS = [1500, 3000, 40, 40, 3, 3];
+
+function fmt(n, digits) {
+  const loc = (I18N[curLang] || I18N.tr)._locale;
+  return new Intl.NumberFormat(loc, { minimumFractionDigits: 0, maximumFractionDigits: digits }).format(n);
+}
+
+function calc() {
+  const [atkiUzunluk, cozguUzunluk, atkiGoz, cozguGoz, atkiCap, cozguCap] =
+    inputs.map(el => parseFloat(el.value) || 0);
+
+  // Excel: B14 = IF(OR(B6=0,B7=0),0,ROUNDDOWN(B6/B7,0)+1)
+  const atkiAdet  = (cozguUzunluk === 0 || atkiGoz === 0)  ? 0 : Math.floor(cozguUzunluk / atkiGoz) + 1;
+  // Excel: B15 = IF(OR(B5=0,B8=0),0,ROUNDDOWN(B5/B8,0)+1)
+  const cozguAdet = (atkiUzunluk === 0 || cozguGoz === 0) ? 0 : Math.floor(atkiUzunluk / cozguGoz) + 1;
+  // Excel: B16 = (B5-(B15-1)*B8)/2, B17 = (B6-(B14-1)*B7)/2
+  const atkiCikinti  = (atkiUzunluk - (cozguAdet - 1) * cozguGoz) / 2;
+  const cozguCikinti = (cozguUzunluk - (atkiAdet - 1) * atkiGoz) / 2;
+  // Excel: B18 = B14*B5/1000, B19 = B15*B6/1000
+  const atkiToplamM  = atkiAdet * atkiUzunluk / 1000;
+  const cozguToplamM = cozguAdet * cozguUzunluk / 1000;
+  // Excel: B20/B21 = PI()/4*(çap/1000)^2*7850
+  const atkiKgm  = Math.PI / 4 * Math.pow(atkiCap / 1000, 2) * DENSITY;
+  const cozguKgm = Math.PI / 4 * Math.pow(cozguCap / 1000, 2) * DENSITY;
+  // Excel: B22 = B18*B20, B23 = B19*B21
+  const atkiKg  = atkiToplamM * atkiKgm;
+  const cozguKg = cozguToplamM * cozguKgm;
+  // Excel: B24 = B5*B6/1000000, B27 = B22+B23, B28 = IF(B24=0,0,B27/B24)
+  const alan   = atkiUzunluk * cozguUzunluk / 1e6;
+  const toplam = atkiKg + cozguKg;
+  const m2     = alan === 0 ? 0 : toplam / alan;
+
+  const set = (id, val) => { document.getElementById(id).textContent = val; };
+  set('r-atki-adet', fmt(atkiAdet, 0));
+  set('r-cozgu-adet', fmt(cozguAdet, 0));
+  set('r-atki-cikinti', fmt(atkiCikinti, 1));
+  set('r-cozgu-cikinti', fmt(cozguCikinti, 1));
+  set('r-atki-toplam-m', fmt(atkiToplamM, 2));
+  set('r-cozgu-toplam-m', fmt(cozguToplamM, 2));
+  set('r-atki-kgm', fmt(atkiKgm, 4));
+  set('r-cozgu-kgm', fmt(cozguKgm, 4));
+  set('r-atki-kg', fmt(atkiKg, 2));
+  set('r-cozgu-kg', fmt(cozguKg, 2));
+  set('r-alan', fmt(alan, 2));
+  set('r-toplam', fmt(toplam, 2));
+  set('r-m2', fmt(m2, 2));
+
+  document.getElementById('calcWarn').classList.toggle('show', atkiCikinti < 0 || cozguCikinti < 0);
+}
+
+inputs.forEach(el => el.addEventListener('input', calc));
+
+document.getElementById('btnReset').addEventListener('click', () => {
+  inputs.forEach((el, i) => { el.value = DEFAULTS[i]; });
+  calc();
+});
+
+if (curLang !== 'tr') applyLang(curLang);
+calc();
+</script>
+</body>
+</html>
