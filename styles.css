@@ -217,9 +217,10 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; letter-spacing
 .hero h1 {
   font-size: clamp(38px, 5.6vw, 72px);
   font-weight: 800; color: var(--hero-text); margin: 22px 0 24px;
+  text-shadow: 0 2px 20px rgba(11,15,20,.6);
 }
 .hero h1 .hl { color: var(--accent-text); }
-.hero-lede { font-size: clamp(16px, 1.4vw, 19px); color: var(--hero-muted); max-width: 56ch; }
+.hero-lede { font-size: clamp(16px, 1.4vw, 19px); color: #C9D2DB; max-width: 56ch; text-shadow: 0 1px 12px rgba(11,15,20,.65); }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .hero-tag {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em;
@@ -242,8 +243,8 @@ html[lang="ar"] .hero-tag { letter-spacing: 0; }
 
 .hero-card {
   border: 1px solid var(--hero-line);
-  background: rgba(17,24,32,.82);
-  backdrop-filter: blur(6px);
+  background: rgba(17,24,32,.66);
+  backdrop-filter: blur(10px);
 }
 .hero-card-head {
   padding: 16px 22px; border-bottom: 1px solid var(--hero-line);
@@ -537,7 +538,8 @@ html[lang="ar"] .calc-total .t-label { letter-spacing: 0; }
 .hero::before {
   content: "";
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(115deg, rgba(11,15,20,.95) 30%, rgba(11,15,20,.78) 62%, rgba(16,57,92,.55) 100%);
+  /* Metnin olduğu sol taraf hafif koyu, sağ taraf videoyu gösterir */
+  background: linear-gradient(100deg, rgba(11,15,20,.78) 0%, rgba(11,15,20,.52) 42%, rgba(11,15,20,.16) 72%, rgba(16,57,92,.10) 100%);
   pointer-events: none;
 }
 .hero::after { z-index: 1; }
